@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="Cache-Control" content="no-transform">
+        <meta http-equiv="Cache-Control" content="no-siteapp">
+        <meta content="email=no" name="format-detection">
+        <title>APP TITLE</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/master.css">
+    </head>
+    <body>
+        <div id="app" class="app cf">
+            <!-- 菜名板块 -->
+            <div class="food_area area_style">
+                <p class="area_title_style">菜品</p>
+                <ul>
+                    <li v-for="(item, index) in menu" class="name_item_style" v-on:click="push_selected(item,index)" v-bind:class="{ food_name_selected: toggle_selected(index)}">{{item.name}}</li>
+                </ul>
+            </div>
+            <!-- 食材板块 -->
+            <div class="ellipsis_area area_style">
+                <p class="area_title_style">食材</p>
+                <ul class="list_wrap">
+                    <li v-for="(item, index) in selected.ellipsis" class="cf name_item_style" v-on:click="push_buy(item)" v-bind:class="{ food_name_selected: toggle_buy(item)}" v-if="check">
+                        <p class="ellipsis_name fl">{{ item.food_name }}</p>
+                        <span class="ellipsis_price fr">￥{{ item.price }}</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- 结账板块 -->
+            <div class="checkOut_area area_style">
+                <p class="area_title_style">结账</p>
+                <ul>
+                    <li v-for="(item, index) in buy" class="name_item_style cf" v-on:click="shift_buy(item)">
+                        <p class="fl">{{item.food_name}}</p>
+                        <span class="ellipsis_price fr">￥{{item.price}}</span>
+                    </li>
+                </ul>
+                <div class="button_area">
+                    <p>总计(￥)：{{sum}}</p>
+                    <button type="button" class="clear" v-on:click="clear_buy()">清空购物车</button>
+                    <button type="button" class="checkout">结账</button>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/vue/2.3.0/vue.js"></script>
+        <script src="https://cdn.bootcss.com/axios/0.16.1/axios.js"></script>
+        <script src="master.js" charset="utf-8"></script>
+    </body>
+</html>

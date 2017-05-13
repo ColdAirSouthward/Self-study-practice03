@@ -1,0 +1,113 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    background: #eff0ea;
+    padding-top: 4em;
+}
+
+.app {
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: top;
+    width: 90%;
+    height: 100%;
+}
+
+.area_style {
+    text-align: left;
+    float: left;
+    width: 26%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    border-radius: 0.2em;
+    padding: 1em;
+    margin: 0 1em;
+    height: 90%;
+}
+
+.app .name_item_style {
+    padding: .6em 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.app .checkOut_area {
+    float: right;
+    position: relative;
+}
+
+.area_title_style {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #515969;
+    border-bottom: 1px solid #dfecf9;
+    text-align: center;
+    height: 10%;
+}
+
+.ellipsis_area ul, .food_area ul {
+    list-style: none;
+    overflow-y: auto;
+    max-height: 90%;
+}
+
+.checkOut_area ul {
+    list-style: none;
+    overflow-y: auto;
+    height: 62%;
+}
+
+.food_name_selected {
+    color: #01cb6a;
+    font-weight: normal;
+}
+
+.ellipsis_price {
+    display: inline-block;
+    padding: 0.1em 0.5em;
+    border-radius: 0.2em;
+    background: #F5B700;
+    color: #fff;
+    font-size: .8em;
+}
+
+.button_area {
+    position: absolute;
+    bottom: .2em;
+    left: 0;
+    width: 100%;
+    padding: .5em 1em;
+    background: #fff;
+}
+
+.button_area p {
+    text-align: right;
+    font-weight: bold;
+    color: #515969;
+}
+
+.checkOut_area .clear, .checkOut_area .checkout {
+    display: block;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 1.5% 0;
+    margin: 3% 0;
+    background: #01cb6a;
+    color: #fff;
+    border-radius: .2em;
+    font-size: 90%;
+    font-weight: 400;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.checkOut_area .clear:hover, .checkOut_area .checkout:hover {
+    opacity: 0.8;
+}
+
+.checkOut_area .clear {
+    background: #FF6978;
+}
